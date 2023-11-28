@@ -1,0 +1,21 @@
+<div{{attributes}} class="editor">
+	<div class="form">
+		{{ form_start(form, {
+        attr: {
+            'data-action': 'live#action',
+            'data-action-name': 'prevent|save'
+        }
+    }) }}
+		{{ form_row(form.content, {
+        attr: {
+            'data-action': 'live#action',
+            'data-action-name': 'update'
+        }
+    }) }}
+		<button class="btn">{{ button_label|default('Save') }}</button>
+		{{ form_end(form) }}
+	</div>
+    <article>
+        {{ data.content|markdown_to_html }}
+    </article>
+</div>
